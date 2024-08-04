@@ -39,7 +39,8 @@ def get_server(cfg: ServerConfig) -> FastAPI:
         """
         return HTMLResponse(content=content)
 
-    @app.post("/uploadfile/")
+    @app.post("/image")
+    @app.post("/image/")
     async def create_upload_file(file: UploadFile = File(...)):
         # with open(f"uploaded_images/{file.filename}", "wb") as buffer:
         #     shutil.copyfileobj(file.file, buffer)
